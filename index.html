@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estoque - Farmácia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Farmácia Estoque</div>
+        <div class="tabs">
+            <div class="tab active" onclick="openTab('cadastro')">CADASTRO</div>
+            <div class="tab" onclick="openTab('movimento')">MOVIMENTO</div>
+            <div class="tab" onclick="openTab('relatorio')">RELATÓRIO</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Conteúdo da aba CADASTRO -->
+        <div id="cadastro" class="content active">
+            <h2>Cadastro de Produtos</h2>
+            <div class="form-group">
+                <label for="codigo">Código do Produto:</label>
+                <input type="text" id="codigo" placeholder="Digite o código">
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome do Produto:</label>
+                <input type="text" id="nome" placeholder="Digite o nome">
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" placeholder="Digite a descrição">
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoria:</label>
+                <select id="categoria">
+                    <option value="">Selecione uma categoria</option>
+                    <option value="medicamento">Medicamento</option>
+                    <option value="higiene">Higiene</option>
+                    <option value="cosmetico">Cosmético</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+            <button>Cadastrar Produto</button>
+
+            <h2 style="margin-top: 30px;">Produtos Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Estoque</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>M001</td>
+                        <td>Paracetamol 500mg</td>
+                        <td>Medicamento</td>
+                        <td>120</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>H002</td>
+                        <td>Sabonete Antibacteriano</td>
+                        <td>Higiene</td>
+                        <td>85</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Conteúdo da aba MOVIMENTO -->
+        <div id="movimento" class="content">
+            <h2>Movimentação de Estoque</h2>
+            <div class="form-group">
+                <label for="tipo-movimento">Tipo de Movimento:</label>
+                <select id="tipo-movimento">
+                    <option value="">Selecione o tipo</option>
+                    <option value="entrada">Entrada</option>
+                    <option value="saida">Saída</option>
+                    <option value="ajuste">Ajuste</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="produto-movimento">Produto:</label>
+                <select id="produto-movimento">
+                    <option value="">Selecione o produto</option>
+                    <option value="M001">Paracetamol 500mg</option>
+                    <option value="H002">Sabonete Antibacteriano</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" placeholder="Digite a quantidade">
+            </div>
+            <div class="form-group">
+                <label for="motivo">Motivo:</label>
+                <input type="text" id="motivo" placeholder="Digite o motivo">
+            </div>
+            <button>Registrar Movimento</button>
+
+            <h2 style="margin-top: 30px;">Últimos Movimentos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Produto</th>
+                        <th>Tipo</th>
+                        <th>Quantidade</th>
+                        <th>Responsável</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10/05/2023</td>
+                        <td>Paracetamol 500mg</td>
+                        <td>Entrada</td>
+                        <td>50</td>
+                        <td>Funcionário A</td>
+                    </tr>
+                    <tr>
+                        <td>09/05/2023</td>
+                        <td>Sabonete Antibacteriano</td>
+                        <td>Saída</td>
+                        <td>15</td>
+                        <td>Funcionário B</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Conteúdo da aba RELATÓRIO -->
+        <div id="relatorio" class="content">
+            <h2>Relatórios</h2>
+            <div class="form-group">
+                <label for="tipo-relatorio">Tipo de Relatório:</label>
+                <select id="tipo-relatorio">
+                    <option value="">Selecione o relatório</option>
+                    <option value="estoque-minimo">Estoque Mínimo</option>
+                    <option value="movimentacao">Movimentação</option>
+                    <option value="validade">Validade</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="periodo">Período:</label>
+                <select id="periodo">
+                    <option value="hoje">Hoje</option>
+                    <option value="semana">Esta semana</option>
+                    <option value="mes">Este mês</option>
+                    <option value="personalizado">Personalizado</option>
+                </select>
+            </div>
+            <button>Gerar Relatório</button>
+
+            <div id="resultado-relatorio" style="margin-top: 30px;">
+                <h2>Resultado do Relatório</h2>
+                <p>Selecione as opções e clique em "Gerar Relatório" para visualizar os dados.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            // Esconde todos os conteúdos
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+
+            // Remove a classe active de todas as abas
+            var tabs = document.getElementsByClassName('tab');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+
+            // Mostra o conteúdo da aba selecionada e marca a aba como ativa
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
