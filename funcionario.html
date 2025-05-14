@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionário</title>
+    <link rel="stylesheet" href="produto.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Farmasic</div>
+        <div class="tabs">
+            <div class="tab active" onclick="openTab('cadastro')">CADASTRO</div>
+            <div class="tab" onclick="openTab('movimento')">MOVIMENTO</div>
+            <div class="tab" onclick="openTab('relatorio')">RELATÓRIO</div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+        <!-- Conteúdo da aba CADASTRO -->
+        <div id="cadastro" class="content active">
+            <h2>Cadastro de Funcionários</h2>
+            <div class="form-group">
+                <label for="cpf">CPF do Funcionário:</label>
+                <input type="text" id="cpf" placeholder="Digite seu CPF">
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome do Funcionário:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome:">
+            </div>
+            <div class="form-group">
+                <label for="observacao">Observação:</label>
+                <input type="text" id="observacao" placeholder="Digite alguma observação">
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoria:</label>
+                <select id="categoria">
+                    <option value="">Selecione uma categoria</option>
+                    <option value="medicamento">Medicamento</option>
+                    <option value="higiene">Higiene</option>
+                    <option value="cosmetico">Cosmético</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+            <button>Cadastrar Funcionário</button>
+
+            <h2 style="margin-top: 30px;">Funcionários Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>CPF</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001.735.284-98</td>
+                        <td>Bianca</td>
+                        <td>Medicamento</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>002.592.492-21</td>
+                        <td>Aurora</td>
+                        <td>Higiene</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

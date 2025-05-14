@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+    <link rel="stylesheet" href="produto.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Farmasic</div>
+        <div class="tabs">
+            <div class="tab active" onclick="openTab('cadastro')">CADASTRO</div>
+            <div class="tab" onclick="openTab('movimento')">MOVIMENTO</div>
+            <div class="tab" onclick="openTab('relatorio')">RELATÓRIO</div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+        <!-- Conteúdo da aba CADASTRO -->
+        <div id="cadastro" class="content active">
+            <h2>Cadastro de Produtos</h2>
+            <div class="form-group">
+                <label for="codigo">Código do Produto:</label>
+                <input type="text" id="codigo" placeholder="Digite o código">
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome do Produto:</label>
+                <input type="text" id="nome" placeholder="Digite o nome">
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" placeholder="Digite a descrição">
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoria:</label>
+                <select id="categoria">
+                    <option value="">Selecione uma categoria</option>
+                    <option value="medicamento">Medicamento</option>
+                    <option value="higiene">Higiene</option>
+                    <option value="cosmetico">Cosmético</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+            <button>Cadastrar Produto</button>
+
+            <h2 style="margin-top: 30px;">Produtos Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Estoque</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>M001</td>
+                        <td>Paracetamol 500mg</td>
+                        <td>Medicamento</td>
+                        <td>120</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>H002</td>
+                        <td>Sabonete Antibacteriano</td>
+                        <td>Higiene</td>
+                        <td>85</td>
+                        <td><button>Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
