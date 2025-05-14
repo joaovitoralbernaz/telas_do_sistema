@@ -15,71 +15,86 @@
             <div class="tab" onclick="openTab('relatorio')">RELATÓRIO</div>
         </div>
     </header>
+    <main>
+        <div class="container">
+            <!-- Conteúdo da aba CADASTRO -->
+            <div id="cadastro" class="content active">
+                <h2>Cadastro do cliente</h2>
+                <div class="form-group">
+                    <label for="CPF">CPF do cliente:</label>
+                    <input type="text" id="CPF" placeholder="Digite seu CPF">
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome do cliente:</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                <label for="endereco">Endereço do cliente:</label>
+                <input type="text" id="endereco" placeholder="Digite seu endereço:">
+            </div>
+            <div class="form-group">
+                <label for="Telefone">Telefone do cliente:</label>
+                <input type="text" id="telefone" placeholder="Digite seu telefone:">
+            </div>
+            <div class="form-group">
+                <label for="Sexo">Sexo do cliente:</label>
+                <input type="text" id="Sexo" placeholder="Digite seu Sexo:">
+            </div>
+                <div class="form-group">
+                    <label for="uf">Uf:</label>
+                    <input type="text" id="uf" placeholder="Digite seu uf">
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria">
+                        <option value="">Selecione uma categoria</option>
+                        <option value="medicamento">Medicamento</option>
+                        <option value="higiene">Higiene</option>
+                        <option value="cosmetico">Cosmético</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <button>Cadastrar cliente</button>
 
-    <div class="container">
-        <!-- Conteúdo da aba CADASTRO -->
-        <div id="cadastro" class="content active">
-            <h2>Cadastro do cliente</h2>
-            <div class="form-group">
-                <label for="CPF">CPF do cliente:</label>
-                <input type="text" id="CPF" placeholder="Digite seu CPF">
+                <h2 style="margin-top: 30px;">Clientes Cadastrados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CPF</th>
+                            <th>Nome</th>
+                            <th>Endereço</th>
+                            <th>Telefone</th>
+                            <th>Sexo</th>
+                            <th>Uf</th>
+                            <th>Categoria</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001.283.509-10</td>
+                            <td>Bruna</td>
+                            <td>Rua Ouro Preto, 100</td>
+                            <td>99177-2948</td>
+                            <td>Feminino</td>
+                            <td>PR</td>
+                            <td>Cosmético</td>
+                            <td><button>Editar</button></td>
+                        </tr>
+                        <tr>
+                            <td>002.433.138-65</td>
+                            <td>Jão</td>
+                            <td>Rua João de Almeida, 72</td>
+                            <td>99920-4974</td>
+                            <td>Feminino</td>
+                            <td>PR</th>
+                            <td>Outros</td>
+                            <td><button>Editar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="form-group">
-                <label for="nome">Nome do cliente:</label>
-                <input type="text" id="nome" placeholder="Digite o nome">
-            </div>
-            <div class="form-group">
-                <label for="descricao">observações:</label>
-                <input type="text" id="descricao" placeholder="Digite alguma observação">
-            </div>
-            <div class="form-group">
-                <label for="categoria">Categoria:</label>
-                <select id="categoria">
-                    <option value="">Selecione uma categoria</option>
-                    <option value="medicamento">Medicamento</option>
-                    <option value="higiene">Higiene</option>
-                    <option value="cosmetico">Cosmético</option>
-                    <option value="outros">Outros</option>
-                </select>
-            </div>
-            <button>Cadastrar cliente</button>
-
-            <h2 style="margin-top: 30px;">Clientes Cadastrados</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>CPF</th>
-                        <th>Nome</th>
-                        <th>Categoria</th>
-                        <th>Ações</th>
-                        <th>sexo</th>
-                        <th>telefone</th>
-                        <td>endereço</td>
-                        <th>CPF</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>>023.512.492-21</td>
-                        <td>jão </td>
-                        <td>Medicamento</td>
-                        <td>120</td>
-                        <td>masc</td>
-                        <td>4499542936</td>
-                        <th>rua das flores,241</th>
-                        <td>78450400</td>
-                        <td><button>Editar</button></td>
-                    </tr>
-                    <tr>
-                        <td>>002.592.492-21</td>
-                        <td> Bruna caires</td>
-                        <td>Higiene</td>
-                        <td>85</td>
-                        <td>4599642181</td>
-                        <td>rua ouro preto,863</td>
-                        <td>78450000</td>
-                        <td><button>Editar</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        </div>>
+    </main>
+</body>
+</html>
